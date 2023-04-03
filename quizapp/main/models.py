@@ -14,7 +14,7 @@ class QuizCategory(models.Model):
 class QuizQuestion(models.Model):
     category=models.ForeignKey(QuizCategory, on_delete=models.CASCADE)
     question=models.TextField()
-    image=models.ImageField(upload_to='cat_imgs/')
+    image=models.ImageField(upload_to='cat_imgs/', null=True, blank=True)
     opt_1=models.CharField(max_length=250)
     opt_2=models.CharField(max_length=250)
     opt_3=models.CharField(max_length=250)
@@ -23,7 +23,7 @@ class QuizQuestion(models.Model):
     level=models.CharField(max_length=100)
     time_limit=models.IntegerField()
     right_ope=models.CharField(max_length=100)
-    comentary=models.CharField(max_length=250)
+    comentary=models.CharField(max_length=250, null=True, blank=True)
     
     class Meta:
         verbose_name_plural="Questions"
