@@ -23,6 +23,7 @@ class QuizQuestion(models.Model):
     level=models.CharField(max_length=100)
     time_limit=models.IntegerField()
     right_ope=models.CharField(max_length=100)
+    comentary=models.CharField(max_length=250)
     
     class Meta:
         verbose_name_plural="Questions"
